@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <emscripten/emscripten.h>
+#include <emscripten.h>
 
-
-void EMSCRIPTEN_KEEPALIVE helloWorld() {
+EMSCRIPTEN_KEEPALIVE
+void helloWorld() {
     printf("Hello from C++\n");
 }

@@ -19,7 +19,7 @@ function buildCPP() {
 	var filterJs = filter(["*.js"], {restore: true});
 
 	return gulp.src(cppFolder+"/"+modname+".cpp")
-		.pipe(emcc(["--no-entry","--bind","-std=c++11","-s WASM=1","-s EXTRA_EXPORTED_RUNTIME_METHODS=['cwrap']"]))
+		.pipe(emcc(["--no-entry","--bind","-std=c++11","-s WASM=1","-s EXTRA_EXPORTED_RUNTIME_METHODS=['ccall,cwrap']"]))
 		.pipe(filterJs)
 		.pipe(plumber())
 		.pipe(terser({
